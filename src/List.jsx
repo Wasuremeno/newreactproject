@@ -1,8 +1,16 @@
-function List(){
-const fruits = ["apple", "orange", "banana", "coconut", "pineapple"]
+function List(props){
 
-const listItems = fruits.map(fruit => <li>{fruit}</li>);
+    const category = props.category;
+    const ItemList = props.items;
+
+const listItems = ItemList.map(item =>   <li key={item.id}>
+                                        {item.name}: &nbsp;
+                                        <b>{item.calories}</b></li>);
+
+return(<>
+        <h3>{category}</h3>
+        <ol>{listItems}</ol>
+</>);
 
 } 
-return(fruits)
-export default List 
+export default List     

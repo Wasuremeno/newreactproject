@@ -1,16 +1,16 @@
 function List(props){
 
     const category = props.category;
-    const ItemList = props.items;
+    const itemList = props.items;
 
-const listItems = ItemList.map(item =>   <li key={item.id}>
+const listItems = itemList.map(item =>   <li key={item.id}>
                                         {item.name}: &nbsp;
                                         <b>{item.calories}</b></li>);
 
 return(<>
-        <h3>{category}</h3>
-        <ol>{listItems}</ol>
+        <h3 className="list-category">{category}</h3>
+        <ol className="list-items">{listItems}</ol>
 </>);
 
 } 
-export default List     
+export default List      

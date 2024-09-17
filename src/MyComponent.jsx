@@ -1,24 +1,85 @@
 import React, {useState} from 'react';
 
 function MyComponent(){
-   const [count, setCount] = useState(0);
 
-   function increment(){
-      setCount(prevCount => prevCount +1);
-      setCount(prevCount => prevCount +1);
-      setCount(prevCount => prevCount +1); 
-   };
+   
+   const [foods, setFoods] = useState(["Apple", "Orange", "Banana"]);
 
-   function decrement(){
-      setCount(count - 1);
-   };
+   function handleAddFood(){
+      const newFood = document.getElementById("foodInput");
+      document.getElementById("foodInput").value = "";
 
-   function reset(){
-      setCount(0);
-   };
-};
+      setFoods(f =>[...f, newFood]);
+   }
+   function handleRemoveFood(index){
+      setFoods();
+   }
+
+   return (<div>
+      <h2>List of Food</h2>
+      <ul>
+         {foods.map((food, index) => 
+         <li key={index} onClick={handleRemoveFood}>
+            {food}</li>)}
+      </ul>
+      <input type="text" id="foodInput" placeholder='Enter food name'/>
+      <button onClick={handleAddFood}>Add Food</button>
+   </div>);
+
+}
+
+export default MyComponent;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, {useState} from 'react';
+// function MyComponent(){
+//    const [count, setCount] = useState(0);
+
+//    function increment(){
+//       setCount(c => c +1);
+//       setCount(c => c +1);
+//       setCount(c => c +1); 
+//    };
+
+//    function decrement(){
+//       setCount(count => count - 1);
+//       setCount(count => count - 1);
+//       setCount(count => count - 1);
+//    };
+
+//    function reset(){
+//       setCount(c => c = 0);
+//    };
+// };
+
+
+ 
 
 
 
